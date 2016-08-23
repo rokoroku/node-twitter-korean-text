@@ -1,6 +1,6 @@
 {
   "name": "node-twitter-korean-text",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Nodejs interface to twitter-korean-text",
   "main": "index.js",
   "scripts": {
