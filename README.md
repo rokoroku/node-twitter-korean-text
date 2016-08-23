@@ -8,7 +8,12 @@ Currently wraps [twitter-korean-text 4.4](https://github.com/twitter/twitter-kor
 현재 이 프로젝트는 [twitter-korean-text 4.4](https://github.com/twitter/twitter-korean-text/releases/tag/korean-text-4.4)을 사용중입니다.
 
 
-# Usage
+## Installation
+```
+npm install --save node-twitter-korean-text
+```
+
+## Usage
 
 ```javascript
 
