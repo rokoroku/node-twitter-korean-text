@@ -33,7 +33,12 @@ export class JavaArrayList extends JavaObject {
     }
 
     async add(...items) {
-        await items.map((item) => this.instance.addSync(item));
+        this.addSync(...items);
+    }
+
+    addSync(...items) {
+        if (Array.isArray(items[0])) items = items[0];
+        items.forEach((item) => this.instance.addSync(item));
     }
 }
 
@@ -54,6 +59,10 @@ export default class TwitterKoreanProcessor {
      * @return Normalized text.
      */
     static async normalize(text) {
+        return this.normalizeSync(text);
+    }
+
+    static normalizeSync(text) {
         return this.instance.normalizeSync(text);
     }
 
@@ -64,6 +73,10 @@ export default class TwitterKoreanProcessor {
      * @return A list of Korean Tokens (run tokensToJsonArray to transform to Java List)
      */
     static async tokenize(text) {
+        return this.tokenizeSync(text);
+    }
+
+    static tokenizeSync(text) {
         return this.instance.tokenizeSync(text);
     }
 
@@ -74,10 +87,14 @@ export default class TwitterKoreanProcessor {
      * @param words List of user nouns.
      */
     static async addNounsToDictionary(...words) {
+        return this.addNounsToDictionarySync(...words);
+    }
+
+    static addNounsToDictionarySync(...words) {
         if (Array.isArray(words[0])) words = words[0];
 
         let list = new JavaArrayList();
-        await list.add(...words);
+        list.addSync(...words);
         return this.instance.addNounsToDictionarySync(list.instance);
     }
 
@@ -89,6 +106,10 @@ export default class TwitterKoreanProcessor {
      * @return Array of token objects.
      */
     static async tokensToJsonArray(tokens, keepSpace = false) {
+        return this.tokensToJsonArraySync(tokens, keepSpace);
+    }
+
+    static tokensToJsonArraySync(tokens, keepSpace = false) {
         const it = tokens.iteratorSync();
         const res = [];
         while (it.hasNextSync()) {
@@ -112,6 +133,10 @@ export default class TwitterKoreanProcessor {
      * @return StemmedTextWithTokens(text, tokens)
      */
     static async stem(tokens) {
+        return this.stemSync(tokens);
+    }
+
+    static stemSync(tokens) {
         return this.instance.stemSync(tokens);
     }
 
@@ -122,6 +147,10 @@ export default class TwitterKoreanProcessor {
      * @return Array of Sentence objects.
      */
     static async splitSentences(text) {
+        return this.splitSentencesSync(text);
+    }
+
+    static splitSentencesSync(text) {
         const sentences = this.instance.splitSentencesSync(text);
         const it = sentences.iteratorSync();
         const res = [];
@@ -144,6 +173,10 @@ export default class TwitterKoreanProcessor {
      * @return Array of phrase CharSequences.
      */
     static async extractPhrases(tokens, filterSpam = true, includeHashtags = false) {
+        return this.extractPhrasesSync(tokens, filterSpam, includeHashtags);
+    }
+
+    static extractPhrasesSync(tokens, filterSpam = true, includeHashtags = false) {
         const phrases = this.instance.extractPhrasesSync(tokens, filterSpam, includeHashtags);
         const it = phrases.iteratorSync();
         const res = [];
@@ -165,11 +198,14 @@ export default class TwitterKoreanProcessor {
      * @return String Detokenized string.
      */
     static async detokenize(...words) {
-        if (Array.isArray(words[0])) words = words[0];
+        return this.detokenizeSync(...words);
+    }
 
+    static detokenizeSync(...words) {
+        if (Array.isArray(words[0])) words = words[0];
         const list = new JavaArrayList();
-        await list.add(...words);
-        const detokenized = await this.instance.detokenizeSync(list.instance);
+        list.addSync(...words);
+        const detokenized = this.instance.detokenizeSync(list.instance);
         return detokenized.toString();
     }
 }

@@ -4,8 +4,8 @@ Nodejs interface to [twitter-korean-text](https://github.com/twitter/twitter-kor
 
 
 ## Compatibility
-Currently wraps [twitter-korean-text 4.4](https://github.com/twitter/twitter-korean-text/releases/tag/korean-text-4.4) 
-현재 이 프로젝트는 [twitter-korean-text 4.4](https://github.com/twitter/twitter-korean-text/releases/tag/korean-text-4.4)을 사용중입니다.
+Currently wraps [twitter-korean-text 4.4.2](https://github.com/twitter/twitter-korean-text/releases/tag/korean-text-4.4.2) 
+현재 이 프로젝트는 [twitter-korean-text 4.4.2](https://github.com/twitter/twitter-korean-text/releases/tag/korean-text-4.4.2)을 사용중입니다.
 
 
 ## Installation
@@ -144,4 +144,34 @@ TwitterKoreanProcessor.detokenize(['늘', '평온', '하게', '누워', '있', '
 });
 
 
+```
+
+#### Synchronous way
+just append Sync at the end of each methods
+```javascript
+
+const TwitterKoreanProcessor = require('node-twitter-korean-text');
+
+// Normalize
+const normalized = TwitterKoreanProcessor.normalizeSync('힘들겟씀다 그래욬ㅋㅋㅋ'); 
+// '힘들겠습니다 그래요ㅋㅋ'
+
+
+// Tokenize
+// tokensToJsonArray(tokens, keepSpace = false)
+
+const tokens = TwitterKoreanProcessor.tokenizeSync('착한강아지상을 받은 루루');
+const tokenWithSpace = TwitterKoreanProcessor.tokensToJsonArraySync(tokens, true);
+// [
+//     { 'text': '착한', 'koreanPos': 'Adjective', 'offset': 0, 'length': 2, 'isUnknown': false },
+//     { 'text': '강아지', 'koreanPos': 'Noun', 'offset': 2, 'length': 3, 'isUnknown': false },
+//     { 'text': '상', 'koreanPos': 'Suffix', 'offset': 5, 'length': 1, 'isUnknown': false },
+//     { 'text': '을', 'koreanPos': 'Josa', 'offset': 6, 'length': 1, 'isUnknown': false },
+//     { 'text': ' ', 'koreanPos': 'Space', 'offset': 7, 'length': 1, 'isUnknown': false },
+//     { 'text': '받은', 'koreanPos': 'Verb', 'offset': 8, 'length': 2, 'isUnknown': false },
+//     { 'text': ' ', 'koreanPos': 'Space', 'offset': 10, 'length': 1, 'isUnknown': false },
+//     { 'text': '루루', 'koreanPos': 'Noun', 'offset': 11, 'length': 2, 'isUnknown': false }
+// ]
+
+...
 ```
