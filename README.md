@@ -1,19 +1,33 @@
 # node-twitter-korean-text
-Nodejs interface to [twitter-korean-text](https://github.com/twitter/twitter-korean-text)
 
+Nodejs interface to [twitter-korean-text](https://github.com/twitter/twitter-korean-text) via  [node-java](https://github.com/joeferner/node-java) 
 
+[![NPM](https://nodei.co/npm/node-twitter-korean-text.png?downloads=true)](https://nodei.co/npm/node-twitter-korean-text.png?downloads=true)
 
-## Compatibility
-Currently wraps [twitter-korean-text 4.4.2](https://github.com/twitter/twitter-korean-text/releases/tag/korean-text-4.4.2) 
+## Dependency
+
+Currently wraps [twitter-korean-text 4.4.2](https://github.com/twitter/twitter-korean-text/releases/tag/korean-text-4.4.2)
+
 현재 이 프로젝트는 [twitter-korean-text 4.4.2](https://github.com/twitter/twitter-korean-text/releases/tag/korean-text-4.4.2)을 사용중입니다.
 
 
+## Requirement
+
+Since it uses java code compiled with Java 8, make sure you have both Java 8 JDK and JRE installed.  
+For more details about installing java interface, see installation notes on [node-java](https://github.com/joeferner/node-java#installation).
+
+이 프로젝트는 Java 8로 컴파일된 코드를 사용하기 때문에, Java 8 JDK/JRE가 설치되어 있어야 합니다.  
+Java interface의 설치에 관련된 더 자세한 사항은 [이곳](https://github.com/joeferner/node-java#installation) 에서 확인하세요.
+
 ## Installation
+
 ```
 npm install --save node-twitter-korean-text
 ```
 
 ## Usage
+
+Support both asynchronous(default) and synchronous way.
 
 ```javascript
 
