@@ -1,14 +1,15 @@
 # node-twitter-korean-text
 
+[![npm version](https://badge.fury.io/js/node-twitter-korean-text.svg)](https://www.npmjs.com/package/node-twitter-korean-text)
+
 Nodejs interface to [twitter-korean-text](https://github.com/twitter/twitter-korean-text) via  [node-java](https://github.com/joeferner/node-java) 
 
-[![NPM](https://nodei.co/npm/node-twitter-korean-text.png?downloads=true)](https://nodei.co/npm/node-twitter-korean-text.png?downloads=true)
 
 ## Dependency
 
-Currently wraps [twitter-korean-text 4.4.2](https://github.com/twitter/twitter-korean-text/releases/tag/korean-text-4.4.2)
+Currently wraps [twitter-korean-text 4.4.3](https://github.com/twitter/twitter-korean-text/releases/tag/korean-text-4.4.3)
 
-현재 이 프로젝트는 [twitter-korean-text 4.4.2](https://github.com/twitter/twitter-korean-text/releases/tag/korean-text-4.4.2)을 사용중입니다.
+현재 이 프로젝트는 [twitter-korean-text 4.4.3](https://github.com/twitter/twitter-korean-text/releases/tag/korean-text-4.4.3)을 사용중입니다.
 
 
 ## Requirement
