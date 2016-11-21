@@ -32,8 +32,8 @@ export class JavaArrayList extends JavaObject {
         super('java.util.ArrayList', value);
     }
 
-    async add(...items) {
-        this.addSync(...items);
+    add(...items) {
+        return Promise.resolve(this.addSync(...items));
     }
 
     addSync(...items) {
@@ -58,8 +58,8 @@ export default class TwitterKoreanProcessor {
      * @param text Input text.
      * @return Normalized text.
      */
-    static async normalize(text) {
-        return this.normalizeSync(text);
+    static normalize(text) {
+        return Promise.resolve(this.normalizeSync(text));
     }
 
     static normalizeSync(text) {
@@ -72,8 +72,8 @@ export default class TwitterKoreanProcessor {
      * @param text Input text.
      * @return A list of Korean Tokens (run tokensToJsonArray to transform to Java List)
      */
-    static async tokenize(text) {
-        return this.tokenizeSync(text);
+    static tokenize(text) {
+        return Promise.resolve(this.tokenizeSync(text));
     }
 
     static tokenizeSync(text) {
@@ -86,14 +86,14 @@ export default class TwitterKoreanProcessor {
      *
      * @param words List of user nouns.
      */
-    static async addNounsToDictionary(...words) {
-        return this.addNounsToDictionarySync(...words);
+    static addNounsToDictionary(...words) {
+        return Promise.resolve(this.addNounsToDictionarySync(...words));
     }
 
     static addNounsToDictionarySync(...words) {
         if (Array.isArray(words[0])) words = words[0];
 
-        let list = new JavaArrayList();
+        const list = new JavaArrayList();
         list.addSync(...words);
         return this.instance.addNounsToDictionarySync(list.instance);
     }
@@ -105,8 +105,8 @@ export default class TwitterKoreanProcessor {
      * @param keepSpace Keep spaces
      * @return Array of token objects.
      */
-    static async tokensToJsonArray(tokens, keepSpace = false) {
-        return this.tokensToJsonArraySync(tokens, keepSpace);
+    static tokensToJsonArray(tokens, keepSpace = false) {
+        return Promise.resolve(this.tokensToJsonArraySync(tokens, keepSpace));
     }
 
     static tokensToJsonArraySync(tokens, keepSpace = false) {
@@ -132,8 +132,8 @@ export default class TwitterKoreanProcessor {
      * @param tokens Korean tokens (output of tokenize(CharSequence text)).
      * @return StemmedTextWithTokens(text, tokens)
      */
-    static async stem(tokens) {
-        return this.stemSync(tokens);
+    static stem(tokens) {
+        return Promise.resolve(this.stemSync(tokens));
     }
 
     static stemSync(tokens) {
@@ -146,8 +146,8 @@ export default class TwitterKoreanProcessor {
      * @param text Input text.
      * @return Array of Sentence objects.
      */
-    static async splitSentences(text) {
-        return this.splitSentencesSync(text);
+    static splitSentences(text) {
+        return Promise.resolve(this.splitSentencesSync(text));
     }
 
     static splitSentencesSync(text) {
@@ -172,8 +172,8 @@ export default class TwitterKoreanProcessor {
      * @param includeHashtags
      * @return Array of phrase CharSequences.
      */
-    static async extractPhrases(tokens, filterSpam = true, includeHashtags = false) {
-        return this.extractPhrasesSync(tokens, filterSpam, includeHashtags);
+    static extractPhrases(tokens, filterSpam = true, includeHashtags = false) {
+        return Promise.resolve(this.extractPhrasesSync(tokens, filterSpam, includeHashtags));
     }
 
     static extractPhrasesSync(tokens, filterSpam = true, includeHashtags = false) {
@@ -197,8 +197,8 @@ export default class TwitterKoreanProcessor {
      * @param words List of words.
      * @return String Detokenized string.
      */
-    static async detokenize(...words) {
-        return this.detokenizeSync(...words);
+    static detokenize(...words) {
+        return Promise.resolve(this.detokenizeSync(...words));
     }
 
     static detokenizeSync(...words) {

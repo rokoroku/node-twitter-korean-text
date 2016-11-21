@@ -7,9 +7,9 @@ Nodejs interface to [twitter-korean-text](https://github.com/twitter/twitter-kor
 
 ## Dependency
 
-Currently wraps [twitter-korean-text 4.4.3](https://github.com/twitter/twitter-korean-text/releases/tag/korean-text-4.4.3)
+Currently wraps [twitter-korean-text 4.4.4](https://github.com/twitter/twitter-korean-text/releases/tag/korean-text-4.4.4)
 
-현재 이 프로젝트는 [twitter-korean-text 4.4.3](https://github.com/twitter/twitter-korean-text/releases/tag/korean-text-4.4.3)을 사용중입니다.
+현재 이 프로젝트는 [twitter-korean-text 4.4.4](https://github.com/twitter/twitter-korean-text/releases/tag/korean-text-4.4.4)을 사용중입니다.
 
 
 ## Requirement
