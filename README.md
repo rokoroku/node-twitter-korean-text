@@ -1,6 +1,7 @@
 # node-twitter-korean-text
 
 [![npm version](https://badge.fury.io/js/node-twitter-korean-text.svg)](https://www.npmjs.com/package/node-twitter-korean-text)
+[![Build Status](https://travis-ci.org/rokoroku/node-twitter-korean-text.svg?branch=travis-ci)](https://travis-ci.org/rokoroku/node-twitter-korean-text)
 
 Nodejs interface to [twitter-korean-text](https://github.com/twitter/twitter-korean-text) via  [node-java](https://github.com/joeferner/node-java) 
 
