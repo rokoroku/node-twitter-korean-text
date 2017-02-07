@@ -1,7 +1,16 @@
+## DEPRECATED
+
+### Please note, this project is deprecated and no longer being maintained.  Please use [open-korean-text-node](https://github.com/open-korean-text/open-korean-text-wrapper-node-2) instead.
+
+```
+npm install --save open-korean-text-node
+```
+
+
 # node-twitter-korean-text
 
 [![npm version](https://badge.fury.io/js/node-twitter-korean-text.svg)](https://www.npmjs.com/package/node-twitter-korean-text)
-[![Build Status](https://travis-ci.org/rokoroku/node-twitter-korean-text.svg?branch=travis-ci)](https://travis-ci.org/rokoroku/node-twitter-korean-text)
+[![Build Status](https://travis-ci.org/rokoroku/node-twitter-korean-text.svg)](https://travis-ci.org/rokoroku/node-twitter-korean-text)
 
 Nodejs interface to [twitter-korean-text](https://github.com/twitter/twitter-korean-text) via  [node-java](https://github.com/joeferner/node-java) 
 
