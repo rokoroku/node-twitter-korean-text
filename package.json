@@ -7,7 +7,9 @@
     "test": "npm run build && lab --globals __core-js_shared__",
     "build": "babel src --out-dir lib",
     "prepublish": "npm run build",
-    "install": "node install.js"
+    "install": "node install.js",
+    "snyk-protect": "snyk protect",
+    "prepare": "npm run snyk-protect"
   },
   "repository": {
     "type": "git",
@@ -31,11 +33,13 @@
   "dependencies": {
     "babel-runtime": "^6.20.0",
     "java": "^0.8.0",
-    "node-wget": "^0.4.2"
+    "node-wget": "^0.4.2",
+    "snyk": "^1.88.0"
   },
   "mavenDependencies": {
     "scala-library": "https://repo1.maven.org/maven2/org/scala-lang/scala-library/2.11.8/scala-library-2.11.8.jar",
     "twitter-text": "https://repo1.maven.org/maven2/com/twitter/twitter-text/1.14.0/twitter-text-1.14.0.jar",
     "korean-text": "https://repo1.maven.org/maven2/com/twitter/penguin/korean-text/4.4.4/korean-text-4.4.4.jar"
-  }
+  },
+  "snyk": true
 }
